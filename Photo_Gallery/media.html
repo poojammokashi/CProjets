@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        .items{
+            background-color: red;
+            font-size: 72px;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: none;
+        }
+        /* If we give min-width: 425px then css will start applying from 425px not from 0px that's the reason we dont
+        give min-width for initial media screen by default min-width is 0px
+        */
+        @media (max-width: 425px){
+            .item1{
+                display: block;
+            }
+        }
+        @media (min-width: 426px) and (max-width:768px){
+            .item2{
+                display: block;
+                background-color: violet;
+            }
+        }
+        @media (min-width:769px) and (max-width: 1024px){
+            .item3{
+                display: block;
+                background-color: yellow;
+                color: black;
+            }
+            /* we dont know the max-width thats the reason we have skipped it */
+            @media (min-width:1025px){
+                .item4{
+                    display: block;
+                    background-color: green;;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p class="items item1">This is an Iphone</p>
+    <p class="items item2">This is Tablet</p>
+    <p class="items item3">This is a Laptop</p>
+    <p class="items item4">This is Large Screen Desktop</p>
+</body>
+</html>
